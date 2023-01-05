@@ -70,7 +70,7 @@ public class MovieRepository {
             directorDb.remove(director);
         }
     }
-    public void deleteAllDirector(){
+    public void deleteAllDirectors(){
 
         HashSet<String> moviesSet = new HashSet<>();
         directorDb = new HashMap<>();

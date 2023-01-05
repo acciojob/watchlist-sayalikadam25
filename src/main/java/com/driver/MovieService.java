@@ -28,13 +28,13 @@ public class MovieService {
     public List<String> findMoviesFromDirector(String director){
         return movieRepository.findMoviesFromDirector(director);
     }
-    public List<String> getAllMovies(){
+    public List<String> findAllMovies(){
         return movieRepository.findAllMovies();
     }
     public void deleteDirector(String director){
         movieRepository.deleteDirector(director);
     }
     public void deleteAllDirectors(){
-        movieRepository.deleteAllDirector();
+        movieRepository.deleteAllDirectors();
     }
 }
