@@ -13,10 +13,12 @@ public class MovieRepository {
     private HashMap<String, Movie> movieDb;
     private HashMap<String, Director> directorDb;
     private HashMap<String, List<String>> directorMoviesMap;
+    private HashMap<String,String> movieDirectorMap;
     public MovieRepository(HashMap<String, Movie> movieDb, HashMap<String, Director> directorDb) {
         this.movieDb = new HashMap<>();
         this.directorDb = new HashMap<>();
         this.directorMoviesMap=new HashMap<>();
+        this.movieDirectorMap=new HashMap<>();
     }
     public void addMovie(Movie movie){
         movieDb.put(movie.getName(),movie);
@@ -85,5 +87,15 @@ public class MovieRepository {
             }
         }
         directorMoviesMap = new HashMap<>();
+    }
+    public void addDirectorMoviePair(String movie,String director){
+        movieDirectorMap.put(movie,director);
+    }
+    public String getDirectorByMovieName(String searchMovie){
+        for(String movie:movieDirectorMap.keySet()){
+            if(searchMovie.equals(movie))
+                return movieDirectorMap.get(movie);
+        }
+        return "Movie not found";
     }
 }
