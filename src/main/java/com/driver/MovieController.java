@@ -32,13 +32,13 @@ public class MovieController {
     }
 
     @GetMapping("get-movie-by-name/{name}")
-    public ResponseEntity<Movie> findMovie(@PathVariable String name){
+    public ResponseEntity<Movie> getMovieByName(@PathVariable String name){
         Movie movie= movieService.findMovie(name);
         return new ResponseEntity<>(movie,HttpStatus.CREATED);
     }
 
     @GetMapping("get-director-by-name/{name}")
-    public ResponseEntity<Director> findDirector(@PathVariable String name){
+    public ResponseEntity<Director> getDirectorByName(@PathVariable String name){
         Director director=movieService.findDirector(name);
         return new ResponseEntity<>(director,HttpStatus.FOUND);
     }
